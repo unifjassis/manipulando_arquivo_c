@@ -1,0 +1,1 @@
+# manipulando_arquivo_c
