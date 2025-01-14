@@ -1,36 +1,26 @@
 #include <stdio.h>
-
-int teste();
+#include "head.h"
 
 int main(void) {
-  //ponteiro do arquivo
-  FILE *file;
-
-  //abrindo arquivo
-  file = fopen("lista.txt", "r");
-  
-  //tratando erros de abertura
-  if(file == NULL)
-    printf("Erro ao abrir arquivo!\n");
-
-  else
-    printf("Arquivo aberto com sucesso!\n");
-
-  //struct caracteristicas de cada pessoa
-  struct pessoa{
-  char nome[200];
-  int idade;
-  float altura;
-  };
-
-  //vetor de pessoas inicializado vazio
-  struct pessoa *pessoas;
-
-  //nessa etapa preciso passar as informações do arquivo para o vetor
-  int a = teste();
-  
-  //fechando arquivo
-  if (fclose(file) == 0)
-    printf("Arquivo fechado com sucesso!\n");
-  return 0;
+	//ponteiro do arquivo
+	FILE *file;
+	
+	//abertura do arquivo
+	open_file(&file);
+	
+	//struct caracteristicas de cada pessoa
+	struct pessoa{
+	char nome[200];
+	int idade;
+	float altura;
+	};
+	
+	//vetor de pessoas inicializado vazio
+	struct pessoa *pessoas;
+	
+	//nessa etapa preciso passar as informacoes do arquivo para a struct
+	
+	//fechamento do arquivo
+	close_file(file);
+	return 0;
 }
